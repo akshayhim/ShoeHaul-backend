@@ -1,5 +1,4 @@
 ("use strict");
-
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 /**
  * order controller
@@ -37,8 +36,8 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         shipping_address_collection: { allowed_countries: ["IN"] },
         payment_method_types: ["card"],
         mode: "payment",
-        success_url: 'https://shoehaul.vercel.app/success',
-        cancel_url:  '/https://shoehaul.vercel.app/failed',
+        success_url: `https://shoehaul.vercel.app/success`,
+        cancel_url: "https://shoehaul.vercel.app/failed",
         line_items: lineItems,
       });
 
